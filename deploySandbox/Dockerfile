@@ -4,6 +4,8 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
+RUN ls
+RUN ls deploySandbox
 COPY ["deploySandbox/deploySandbox.csproj", "./deploySandbox/"]
 RUN dotnet restore "deploySandbox/deploySandbox.csproj"
 COPY . .
