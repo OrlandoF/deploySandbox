@@ -4,7 +4,7 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY ["deploySandbox/deploySandbox.csproj", "deploySandbox/"]
+COPY ["deploySandbox/deploySandbox.csproj", "./deploySandbox/"]
 RUN dotnet restore "deploySandbox/deploySandbox.csproj"
 COPY . .
 WORKDIR "/src/deploySandbox"
